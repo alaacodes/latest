@@ -17,7 +17,6 @@ code {
     monospace;
 }
 
-/* Ensure root element has no scroll */
 #root {
   height: 100vh;
   overflow: hidden !important;

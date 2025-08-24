@@ -17,7 +17,6 @@ function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showRestOfPage, setShowRestOfPage] = useState(false);
 
-  // Handle slide transitions
   const transitionToSlide = (targetSlide) => {
     if (isTransitioning || targetSlide === currentSlide) return;
     
@@ -29,7 +28,6 @@ function App() {
     }, 800);
   };
 
-  // Show rest of page
   const showRestOfPageContent = () => {
     if (isTransitioning) return;
     
@@ -41,7 +39,6 @@ function App() {
     }, 800);
   };
 
-  // Hide rest of page and return to slider
   const hideRestOfPageContent = () => {
     if (isTransitioning) return;
     
@@ -53,7 +50,6 @@ function App() {
     }, 800);
   };
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (showRestOfPage) {
@@ -79,42 +75,33 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentSlide, showRestOfPage]);
 
-  // Mouse wheel navigation
   useEffect(() => {
     const handleWheel = (e) => {
       if (isTransitioning) return;
       
       if (showRestOfPage) {
-        // Get the rest-of-page element to check scroll position
         const restOfPageElement = document.querySelector('.rest-of-page');
         if (restOfPageElement) {
           const scrollTop = restOfPageElement.scrollTop;
           
-          // Only return to slider if scrolling up AND at the very top of the content
           if (e.deltaY < 0 && scrollTop <= 10) {
             e.preventDefault();
             hideRestOfPageContent();
           }
-          // Allow natural scrolling for all other cases
         }
       } else {
-        // Prevent default scroll behavior only for slider navigation
         e.preventDefault();
         
         if (e.deltaY > 0 && currentSlide === 0) {
-          // Scrolling down - go to slide 1 (slide in from right)
           transitionToSlide(1);
         } else if (e.deltaY > 0 && currentSlide === 1) {
-          // Scrolling down from slide 1 - show rest of page
           showRestOfPageContent();
         } else if (e.deltaY < 0 && currentSlide === 1) {
-          // Scrolling up - go to slide 0 (slide in from left)
           transitionToSlide(0);
         }
       }
     };
   
-    // Use passive: false to allow preventDefault when needed
     window.addEventListener('wheel', handleWheel, { passive: false });
     return () => window.removeEventListener('wheel', handleWheel);
   }, [currentSlide, isTransitioning, showRestOfPage]);

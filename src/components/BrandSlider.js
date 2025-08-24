@@ -27,7 +27,6 @@ const BrandSlider = ({ isActive }) => {
   useEffect(() => {
     if (!sliderBgRef.current) return;
 
-    // Clear existing videos
     sliderBgRef.current.innerHTML = '';
     backgroundVideos.current = [];
 

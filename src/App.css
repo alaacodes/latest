@@ -1,7 +1,5 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Helvetica+Neue:wght@400;600&display=swap');
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +10,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Global body fix - prevent any scrolling */
 html, body {
   height: 100%;
-  overflow: hidden; /* Remove scrollbars completely */
+  overflow: hidden;
   overscroll-behavior: none;
 }
 
@@ -26,15 +23,13 @@ body {
   overscroll-behavior: none;
 }
 
-/* Main Content Container */
 .main-content {
   width: 100%;
   height: 100vh;
-  overflow: hidden; /* Prevent any scrolling */
+  overflow: hidden;
   position: relative;
 }
 
-/* Slide Container System - Fixed horizontal sliding */
 .slide-container {
   position: relative;
   width: 100%;
@@ -53,7 +48,6 @@ body {
   overflow: hidden;
 }
 
-/* Hero slide - starts in view, slides left when inactive */
 .hero.slide {
   transform: translateX(0);
   z-index: 2;
@@ -64,7 +58,6 @@ body {
   z-index: 1;
 }
 
-/* BrandSlider slide - starts off-screen right, slides in when active */
 .brand-slider.slide {
   position: absolute;
   top: 0;
@@ -81,7 +74,6 @@ body {
   z-index: 2;
 }
 
-/* Scroll Animation Classes */
 .scroll-animate {
   opacity: 0;
   transform: translateY(30px);
@@ -135,7 +127,6 @@ body {
   transition: transform 0.1s linear;
 }
 
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -234,9 +225,6 @@ body {
   color: #333333;
 }
 
-
-
-/* Hero Section */
 .hero {
   width: 100%;
   height: 100vh;
@@ -305,7 +293,6 @@ body {
   transform: scale(1.02);
 }
 
-/* Brand Slider Section */
 .brand-slider {
   width: 100%;
   height: 100vh;
@@ -349,7 +336,7 @@ video.bg-image {
 .brand-item {
   font-family: "Playfair Display", serif;
   line-height: 1.08;
-  color: rgba(255, 255, 255, 0.7); /* Changed from 0.3 to 0.7 for better visibility */
+  color: rgba(255, 255, 255, 0.7);
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   font-size: clamp(2.2rem, 6vw, 4.4rem);
   cursor: pointer;
@@ -359,12 +346,12 @@ video.bg-image {
 }
 
 .brand-item.active {
-  color: #fff; /* Keep full white for active state */
+  color: #fff;
   transform: translateX(0) scale(1.02);
 }
 
 .brand-item:hover {
-  color: rgba(255, 255, 255, 0.9); /* Changed from 0.8 to 0.9 */
+  color: rgba(255, 255, 255, 0.9);
   transform: translateX(10px) scale(1.01);
 }
 
@@ -424,7 +411,6 @@ video.bg-image {
   text-align: right;
 }
 
-/* Slide Navigation Indicators - Fixed positioning */
 .slide-indicators {
   position: fixed;
   bottom: 2rem;
@@ -453,7 +439,6 @@ video.bg-image {
   background: rgba(255, 255, 255, 0.7);
 }
 
-/* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -472,7 +457,6 @@ video.bg-image {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Performance optimizations */
 @media (prefers-reduced-motion: reduce) {
   .scroll-animate,
   .scroll-animate-left,
@@ -488,7 +472,6 @@ video.bg-image {
   }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .hero-left {
     padding: 4rem 2rem;
@@ -541,9 +524,8 @@ video.bg-image {
   }
 }
 
-/* Update the initial state rule */
 .brand-slider:not(.active) .brand-item {
-  transform: translateX(50px); /* Changed from translateX(-20px) */
+  transform: translateX(50px);
   opacity: 0;
 }
 
@@ -551,7 +533,6 @@ video.bg-image {
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Recent Clients Section */
 .recent-clients {
   width: 100%;
   height: 100vh;
@@ -563,7 +544,6 @@ video.bg-image {
   overflow: hidden;
 }
 
-/* Recent Clients Container */
 .recent-clients-container {
   position: relative;
   max-width: 1400px;
@@ -572,7 +552,6 @@ video.bg-image {
   overflow: hidden;
 }
 
-/* Add shadow overlays */
 .recent-clients-container::before,
 .recent-clients-container::after {
   content: '';
@@ -652,7 +631,6 @@ video.bg-image {
   filter: brightness(1);
 }
 
-/* Sliding animations */
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
@@ -671,7 +649,6 @@ video.bg-image {
   }
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .recent-clients-container {
     padding: 0 20px;
@@ -691,44 +668,40 @@ video.bg-image {
   }
 }
 
-/* Static sections below slider */
 .static-sections {
   position: relative;
   z-index: 1;
   background: #000;
   min-height: 100vh;
-  padding-top: 40px; /* Reduced from 80px to 40px */
+  padding-top: 40px;
 }
 
-/* Hide slider when showing rest of page */
 .slide-container.hide-slider {
   transform: translateY(-100vh);
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Rest of page styles */
 .rest-of-page {
   position: fixed;
-  top: 100vh; /* Start below viewport */
+  top: 100vh;
   left: 0;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   background: #000;
   transform: translateY(0);
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 10;
-  overflow-y: auto; /* Enable scrolling within the section */
+  overflow-y: auto;
 }
 
 .rest-of-page.show {
-  transform: translateY(-100vh); /* Slide up into view */
+  transform: translateY(-100vh);
 }
 
-/* Recent Clients adjustments for rest of page */
 .rest-of-page .recent-clients {
   position: relative;
-  height: auto; /* Allow natural height */
-  min-height: 100vh; /* Ensure it fills the viewport initially */
+  height: auto;
+  min-height: 100vh;
   transform: none;
   opacity: 1;
 }
@@ -738,20 +711,19 @@ video.bg-image {
   opacity: 1;
 }
 
-/* AI Product Design Section */
 .ai-product-design {
-  padding: 40px 40px 80px 40px; /* Reduced top padding from 80px to 40px */
-  background-color: #000; /* Changed from #fff to #000 */
+  padding: 40px 40px 80px 40px;
+  background-color: #000;
   position: relative;
 }
 
 .ai-product-design .section-header {
-  text-align: left; /* Changed from center to left */
+  text-align: left;
   margin-bottom: 60px;
 }
 
 .ai-product-design .section-title {
-  font-size: 36px; /* Increased from 28px to 48px */
+  font-size: 36px;
   font-weight: 900;
   color: #fff;
   margin-bottom: 20px;
@@ -759,10 +731,10 @@ video.bg-image {
 }
 
 .ai-product-design .section-subtitle {
-  font-size: 18px; /* Increased from 16px to 20px */
+  font-size: 18px;
   line-height: 1.6;
   color: #ccc;
-  width: 100%; /* Changed from max-width: 800px to width: 100% */
+  width: 100%;
   margin: 0;
 }
 
@@ -770,7 +742,7 @@ video.bg-image {
   content: attr(data-caption);
   display: block;
   font-size: 14px;
-  color: #ccc; /* Changed from #666 to #ccc for better contrast */
+  color: #ccc;
   margin-top: 10px;
   font-weight: 500;
 }
@@ -788,7 +760,7 @@ video.bg-image {
 
 .info-block h3,
 .info-block p {
-  display: none; /* Hidden as per original design */
+  display: none;
 }
 
 .info-image {
@@ -818,10 +790,9 @@ video.bg-image {
   font-weight: 500;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .ai-product-design {
-    padding: 30px 20px 60px 20px; /* Reduced top padding for mobile too */
+    padding: 30px 20px 60px 20px;
   }
   
   .info-blocks {
@@ -834,15 +805,14 @@ video.bg-image {
   }
   
   .ai-product-design .section-title {
-    font-size: 36px; /* Increased mobile size from 24px to 36px */
+    font-size: 36px;
   }
   
   .ai-product-design .section-subtitle {
-    font-size: 18px; /* Added mobile subtitle size */
+    font-size: 18px;
   }
 }
 
-/* Design Showcase Section */
 .design-showcase {
   padding: 80px 60px;
   background-color: #000;
@@ -930,7 +900,6 @@ video.bg-image {
   border-bottom-color: #007bff;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .design-showcase {
     padding: 60px 30px;
@@ -955,7 +924,6 @@ video.bg-image {
   }
 }
 
-/* Portfolio Gallery Section */
 .portfolio-gallery {
   padding: 80px 60px;
   background-color: #000;
@@ -1008,7 +976,6 @@ video.bg-image {
   letter-spacing: 0.5px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .portfolio-gallery {
     padding: 60px 30px;
@@ -1028,7 +995,6 @@ video.bg-image {
   }
 }
 
-/* FAQ Section */
 .faq-section {
   padding: 80px 60px 0 60px;
   background-color: #000;
@@ -1125,7 +1091,6 @@ video.bg-image {
   white-space: normal;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .faq-section {
     padding: 60px 30px;
@@ -1149,7 +1114,6 @@ video.bg-image {
   }
 }
 
-/* Belief Section */
 .belief-section {
   text-align: center;
   padding: 100px 0;
@@ -1187,7 +1151,6 @@ video.bg-image {
   transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .belief-section {
     max-width: 90%;
@@ -1204,12 +1167,10 @@ video.bg-image {
   }
 }
 
-/* Footer Styles */
 .footer-container {
   padding: 80px 40px 40px;
   margin-top: 0;
   background-color: #000;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 .footer-content {
@@ -1287,7 +1248,6 @@ video.bg-image {
   opacity: 0.8;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .footer-container {
     padding: 60px 20px 30px;
