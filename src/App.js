@@ -136,7 +136,7 @@ function App() {
         <RecentClients />
         <AIProductDesign />
         <DesignShowcase />
-        <PortfolioGallery />
+        {/* <PortfolioGallery /> */}
         <BeliefSection />
         <FAQSection />
         <Footer />

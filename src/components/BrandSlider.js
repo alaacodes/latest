@@ -9,17 +9,17 @@ const BrandSlider = ({ isActive }) => {
     {
       title: 'AdEngine',
       bg: '/agd1.mp4',
-      caption: '+$5K MRR in 4 months for AdEngine'
+      // caption: '+$5K MRR in 4 months for AdEngine'
     },
     {
       title: 'Giulia Gierrieri',
       bg: '/agd2.mp4',
-      caption: 'Podcast design strategy for Giulia Gierrieri'
+      // caption: 'Podcast design strategy for Giulia Gierrieri'
     },
     {
       title: 'ClientAcquisition.io',
       bg: '/agd1.mp4',
-      caption: '+$12K in 30 days for ClientAcquisition.io'
+      // caption: '+$12K in 30 days for ClientAcquisition.io'
     }
   ];
 
@@ -95,8 +95,6 @@ const BrandSlider = ({ isActive }) => {
     }
   }, [isActive]);
 
-  // Add this useEffect after your existing ones (around line 70)
-  // Update the useEffect that handles brand item animation
   useEffect(() => {
     if (isActive) {
       const brandItems = document.querySelectorAll('.brand-slider .brand-item');

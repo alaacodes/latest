@@ -27,8 +27,8 @@ const Navbar = ({ currentSlide }) => {
         AN AI PRODUCT DESIGN AND BUILD AGENCY
       </div>
       <nav className="nav-links scroll-animate-right">
-        <a href="#">[CAREERS]</a>
-        <a href="https://tally.so/r/mZD1Az">[CONTACT]</a>
+        <a href="#">CAREERS</a>
+        <a href="https://tally.so/r/mZD1Az">CONTACT</a>
       </nav>
     </header>
   );

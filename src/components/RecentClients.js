@@ -6,12 +6,12 @@ const RecentClients = ({ isActive }) => {
 
   // Client logos data - using the client1.png, client2.png format
   const clientLogos = [
-    { id: 1, name: 'Client 1', logo: '/client1.png' },
-    { id: 2, name: 'Client 2', logo: '/client2.png' },
-    { id: 3, name: 'Client 3', logo: '/client3.png' },
-    { id: 4, name: 'Client 4', logo: '/client4.png' },
-    { id: 5, name: 'Client 5', logo: '/client5.png' },
-    { id: 6, name: 'Client 6', logo: '/client6.png' },
+    { id: 1, name: 'Client 1', logo: '/ebrahim@4x.png' },
+    { id: 2, name: 'Client 2', logo: '/giulia@4x.png' },
+    { id: 3, name: 'Client 3', logo: '/serge@4x.png' },
+    { id: 4, name: 'Client 4', logo: '/lalonde@4x.png' },
+    { id: 5, name: 'Client 5', logo: '/moser@4x.png' },
+    { id: 6, name: 'Client 6', logo: '/senra@4x.png' },
   ];
 
   useEffect(() => {
