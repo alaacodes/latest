@@ -6,7 +6,6 @@ import BrandSlider from './components/sections/BrandSlider';
 import RecentClients from './components/sections/RecentClients';
 import AIProductDesign from './components/sections/AIProductDesign';
 import DesignShowcase from './components/sections/DesignShowcase';
-// import PortfolioGallery from './components/sections/PortfolioGallery';
 import BeliefSection from './components/sections/BeliefSection';
 import FAQSection from './components/sections/FAQSection';
 import Footer from './components/layout/Footer';

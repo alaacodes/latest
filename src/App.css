@@ -196,26 +196,6 @@ body {
   text-decoration: none;
 }
 
-.tagline {
-  justify-self: center;
-  align-self: center;
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  text-align: center;
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  font-weight: 400;
-  pointer-events: none;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0 57%, #000000 50% 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 .nav-links {
   justify-self: end;
   display: flex;
@@ -977,76 +957,7 @@ video.bg-image {
   }
 }
 
-.portfolio-gallery {
-  padding: 15px 30px;
-  background-color: #000;
-}
 
-.portfolio-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.portfolio-item {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: #ffffff;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform;
-  flex: 0 1 calc(50% - 15px);
-  max-width: calc(50% - 15px);
-}
-
-.portfolio-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  display: block;
-}
-
-.portfolio-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-  color: white;
-  padding: 50px 24px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: left;
-  letter-spacing: 0.5px;
-}
-
-@media (max-width: 768px) {
-  .portfolio-gallery {
-    padding: 15px 30px;
-  }
-  
-  .portfolio-grid {
-    gap: 30px;
-  }
-  
-  .portfolio-item {
-    flex: 0 1 100%;
-    max-width: 100%;
-  }
-  
-  .portfolio-item img {
-    height: 250px;
-  }
-}
 
 .faq-section {
   padding: 20px 60px 0 60px;
