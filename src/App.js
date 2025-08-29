@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import BrandSlider from './components/BrandSlider';
-import RecentClients from './components/RecentClients';
-import AIProductDesign from './components/AIProductDesign';
-import DesignShowcase from './components/DesignShowcase';
-import PortfolioGallery from './components/PortfolioGallery';
-import BeliefSection from './components/BeliefSection';
-import FAQSection from './components/FAQSection';
-import Footer from './components/Footer';
+import Hero from './components/sections/Hero';
+import BrandSlider from './components/sections/BrandSlider';
+import RecentClients from './components/sections/RecentClients';
+import AIProductDesign from './components/sections/AIProductDesign';
+import DesignShowcase from './components/sections/DesignShowcase';
+// import PortfolioGallery from './components/sections/PortfolioGallery';
+import BeliefSection from './components/sections/BeliefSection';
+import FAQSection from './components/sections/FAQSection';
+import Footer from './components/layout/Footer';
 
 
 function App() {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import agencidevLogo from '../assets/images/agencidev-logo-small.png';
 
 const Navbar = ({ currentSlide }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = ({ currentSlide }) => {
     }`}>
       <div className="logo scroll-animate-left">
         <a href="/">
-          <img src="/agencidev-logo-small.png" alt="Agencidev" />
+          <img src={agencidevLogo} alt="Agencidev" />
         </a>
       </div>
       <nav className="nav-links scroll-animate-right">
