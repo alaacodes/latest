@@ -25,7 +25,7 @@ const Navbar = ({ currentSlide }) => {
         </a>
       </div>
       <nav className="nav-links scroll-animate-right">
-        <a href="#">CAREERS</a>
+        <a href="https://tally.so/r/mZD1Az">CAREERS</a>
         <a href="https://tally.so/r/mZD1Az">CONTACT</a>
       </nav>
     </header>

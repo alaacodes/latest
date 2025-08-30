@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/sections/Hero';
@@ -16,7 +16,7 @@ function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showRestOfPage, setShowRestOfPage] = useState(false);
 
-  const transitionToSlide = (targetSlide) => {
+  const transitionToSlide = useCallback((targetSlide) => {
     if (isTransitioning || targetSlide === currentSlide) return;
     
     setIsTransitioning(true);
@@ -25,9 +25,9 @@ function App() {
     setTimeout(() => {
       setIsTransitioning(false);
     }, 800);
-  };
+  }, [isTransitioning, currentSlide]);
 
-  const showRestOfPageContent = () => {
+  const showRestOfPageContent = useCallback(() => {
     if (isTransitioning) return;
     
     setIsTransitioning(true);
@@ -36,9 +36,9 @@ function App() {
     setTimeout(() => {
       setIsTransitioning(false);
     }, 800);
-  };
+  }, [isTransitioning]);
 
-  const hideRestOfPageContent = () => {
+  const hideRestOfPageContent = useCallback(() => {
     if (isTransitioning) return;
     
     setIsTransitioning(true);
@@ -47,7 +47,7 @@ function App() {
     setTimeout(() => {
       setIsTransitioning(false);
     }, 800);
-  };
+  }, [isTransitioning]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -72,7 +72,7 @@ function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentSlide, showRestOfPage]);
+  }, [currentSlide, showRestOfPage, hideRestOfPageContent, showRestOfPageContent, transitionToSlide]);
 
   useEffect(() => {
     const handleWheel = (e) => {
@@ -103,7 +103,7 @@ function App() {
   
     window.addEventListener('wheel', handleWheel, { passive: false });
     return () => window.removeEventListener('wheel', handleWheel);
-  }, [currentSlide, isTransitioning, showRestOfPage]);
+  }, [currentSlide, isTransitioning, showRestOfPage, hideRestOfPageContent, showRestOfPageContent, transitionToSlide]);
 
   return (
     <div className="App">
